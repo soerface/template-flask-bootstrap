@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request
 
+from fizzbuzz import fizzbuzz
+
 app = Flask(__name__)
 
 
 @app.context_processor
-def add_navigation():
+def add_navigation() -> dict:
     endpoints = [
         ('index', 'Home'),
         ('about', 'About')
@@ -22,7 +24,11 @@ def add_navigation():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    results = [{
+        'input': x,
+        'output': fizzbuzz(x),
+    } for x in range(25, 41)]
+    return render_template('index.html', results=results)
 
 
 @app.route('/about')
