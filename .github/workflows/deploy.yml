@@ -16,4 +16,7 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
     - run: ls
-    - run: echo $HOME
+    - name: 'Checking out the with keyword'
+      run: echo $INPUT_AWESOME_VARIABLE
+      with:
+        awesome_variable: Such a good input
