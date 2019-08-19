@@ -17,7 +17,7 @@ jobs:
         echo test, and deploy your project.
     - run: ls
     - name: 'Checking out the with keyword'
-      uses: docker://hello-world
+      uses: docker://debian:stretch-slim
       with:
         awesome_variable: Such a good input
         entrypoint: /bin/echo
