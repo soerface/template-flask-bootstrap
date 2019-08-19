@@ -17,3 +17,5 @@ jobs:
         echo test, and deploy your project.
     - name: My first docker step
       uses: docker://alpine:3.8
+    - run: ls /
+    - run: echo $HOME
