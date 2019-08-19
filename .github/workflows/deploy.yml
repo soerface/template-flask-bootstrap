@@ -6,6 +6,9 @@ jobs:
   build:
 
     runs-on: ubuntu-18.04
+    strategy:
+    matrix:
+      node: [6, 8, 10]
     
     steps:
     - uses: actions/checkout@v1
@@ -21,4 +24,4 @@ jobs:
       with:
         awesome_variable: Such a good input
         entrypoint: /bin/echo
-        args: this was run due to a $INPUT_AWESOME_VARIABLE
+        args: this was run due to a $
