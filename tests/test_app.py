@@ -16,6 +16,6 @@ class TestApp(TestCase):
 
     def test_about(self):
         with app.test_client() as client:
-            res = client.get('/about')
+            res = client.get('/about/')
             self.assertEqual(200, res.status_code)
             self.assertIn(b'<h1>About</h1>', res.data)
