@@ -17,6 +17,8 @@ jobs:
         echo test, and deploy your project.
     - run: ls
     - name: 'Checking out the with keyword'
-      run: echo $INPUT_AWESOME_VARIABLE
+      uses: docker://hello-world
       with:
         awesome_variable: Such a good input
+        entrypoint: /bin/echo
+        args: this was run due to a $
