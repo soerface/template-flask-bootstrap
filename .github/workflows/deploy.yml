@@ -24,5 +24,5 @@ jobs:
       with:
         awesome_variable: Such a good input
         entrypoint: /bin/echo
-        args: "this was run due to a $INPUT_AWESOME_VARIABLE"
+        args: bash -c echo $INPUT_AWESOME_VARIABLE
         version: $
