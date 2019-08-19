@@ -19,3 +19,4 @@ jobs:
       uses: docker://alpine:3.8
     - run: ls /
     - run: echo $HOME
+    - uses: docker://hello-world
