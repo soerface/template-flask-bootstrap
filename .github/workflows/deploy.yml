@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
-        node: [6, 8, 10]
+        node_version: [6, 8, 10]
     
     steps:
     - uses: actions/checkout@v1
@@ -22,4 +22,4 @@ jobs:
     - name: 'Say the cow'
       uses: mscoutermarsh/cowsays-action@🐮
       with:
-        args: $
+        args: ${{ matrix.node_version }}
