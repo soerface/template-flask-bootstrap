@@ -23,6 +23,6 @@ jobs:
       uses: docker://debian:stretch-slim
       with:
         awesome_variable: Such a good input
-        entrypoint: /bin/echo
-        args: bash -c echo $INPUT_AWESOME_VARIABLE
+        entrypoint: /bin/bash
+        args: -c echo $INPUT_AWESOME_VARIABLE
         version: $
