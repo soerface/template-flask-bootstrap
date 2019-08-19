@@ -15,9 +15,5 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
-    - name: My first docker step
-      uses: docker://alpine:3.8
-    - run: ls /
+    - run: ls
     - run: echo $HOME
-    - uses: docker://hello-world
-    - uses: docker://continuumio/anaconda3
