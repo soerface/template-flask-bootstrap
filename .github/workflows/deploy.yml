@@ -26,3 +26,7 @@ jobs:
         entrypoint: /bin/bash
         args: bash -c echo $INPUT_AWESOME_VARIABLE
         version: $
+    - name: 'Say the cow'
+      uses: mscoutermarsh/cowsays-action@🐮
+      with:
+        version: $
