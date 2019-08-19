@@ -24,3 +24,5 @@ jobs:
       run: pip install flake8
     - name: Run stylecheck
       run: flake8 .
+    - name: Run tests
+      run: nosetests --with-doctest .
