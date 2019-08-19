@@ -23,8 +23,8 @@ jobs:
       uses: docker://debian:stretch-slim
       with:
         awesome_variable: Such a good input
-        entrypoint: /bin/bash
-        args: bash -c echo $INPUT_AWESOME_VARIABLE
+        entrypoint: /bin/echo
+        args: $INPUT_AWESOME_VARIABLE
         version: $
     - name: 'Say the cow'
       uses: mscoutermarsh/cowsays-action@🐮
