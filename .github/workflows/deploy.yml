@@ -26,4 +26,20 @@ jobs:
       run: flake8 .
     - name: Run tests
       run: nosetests --with-doctest .
-    - run: echo $GITHUB_TOKEN
+    - name: Build static version
+      run: python src/freeze.py
+    - name: Deploy to GitHub Pages
+      run: |
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
+        export REMOTE=$(git config remote.origin.url)
+        git checkout --orphan gh-pages
+        rsync -a \
+          --filter='P build' \
+          --filter='P .git/' \
+          --delete-excluded \
+          build/ .
+        rm -rf build/
+        git add -A
+        git commit -m "GitHub Actions build $(date -Iseconds)"
+        git push ${REMOTE/github/${GITHUB_TOKEN}@github} gh-pages
