@@ -44,4 +44,5 @@ jobs:
         rm -rf build/
         git add -A
         git commit -m "GitHub Actions build $(date -Iseconds)"
-        git push ${REMOTE/github/${GITHUB_TOKEN}@github} gh-pages
+        # git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" gh-pages
+        git push origin gh-pages
