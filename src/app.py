@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 
 from flask import Flask, render_template, request, Blueprint
 
@@ -21,6 +22,17 @@ def add_navigation() -> dict:
 
     return {
         'navigation': items,
+    }
+
+
+@bp.context_processor
+def add_last_updated() -> dict:
+    """
+    Returns the date when the website was updated.
+    Since we are using frozen-flask, we just return datetime.now()
+    """
+    return {
+        'PAGE_LAST_UPDATED': datetime.now().strftime('%c')
     }
 
 
