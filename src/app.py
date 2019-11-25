@@ -51,7 +51,7 @@ def about():
 
 
 github_repository = os.getenv('GITHUB_REPOSITORY')
-if github_repository:
+if github_repository and not os.getenv('CNAME'):
     owner, sep, repo = github_repository.partition('/')
     app = Flask(__name__, static_url_path=f'/{repo}/static')
     app.register_blueprint(bp, url_prefix=f'/{repo}')
