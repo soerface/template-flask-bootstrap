@@ -5,10 +5,6 @@ Build and host a static version of your flask application on GitHub Pages.
 ## Usage
 
 - Click on [Use this template](https://github.com/soerface/template-flask-bootstrap/generate)
-- Add a `PERSONAL_ACCESS_TOKEN` secret in your repo settings
-    - Generate a [Personal access token](https://github.com/settings/tokens) with the "repo" scope
-    - Go to your repository -> Settings -> Secrets
-    - Add a secret with the name `PERSONAL_ACCESS_TOKEN`, paste the token you received in the last step
 - Make a commit to trigger a new build
 
 ### Optional: Use your own domain
